@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Funcoes {
-    private float n1, n2, n3, total, cont;
+    private float n1, n2, n3, n4, total, cont;
     private int opc;
     private String op;
 
@@ -11,8 +11,10 @@ public class Funcoes {
         
         System.out.println("Digite o número: ");
         n1 = entrada.nextFloat();
+        
         System.out.println("Digite outro número: ");
         n2 = entrada.nextFloat();
+       
         total = n1 + n2;
         
         System.out.printf("\n %.1f + %.1f = %.1f\n", n1, n2, total);
@@ -27,12 +29,18 @@ public class Funcoes {
             {
                 break;
             }
-            else{
+            else if(op.equalsIgnoreCase("S")){
+                
                 System.out.println("Digite o número: ");
                 n3 = entrada.nextFloat();
+                
                 total += n3;
+               
                 System.out.println("+ " + n3);
                 System.out.println("= "  + total);
+            } 
+            else {
+                System.out.println("ERRO!! Digite a opção correta!!!");
             }
             
         }while(op.equalsIgnoreCase("S"));
@@ -42,15 +50,15 @@ public class Funcoes {
         
         System.out.println("Digite o número: ");
         n1 = entrada.nextFloat();
+       
         System.out.println("Digite outro número: ");
         n2 = entrada.nextFloat();
-        total = n1 - n2;
         
+        total = n1 - n2;
         System.out.printf("\n %.1f - %.1f = %.1f\n", n1, n2, total);
         operacao();
-
-        do{
-            
+    
+        do{ 
             System.out.println("Quer digitar mais números? [S/N]");
             op = entrada.next();
 
@@ -58,12 +66,19 @@ public class Funcoes {
             {
                 break;
             }
-            else{
+            else if(op.equalsIgnoreCase("S")){
+                
                 System.out.println("Digite o número: ");
+               
                 n3 = entrada.nextFloat();
+                
                 total -= n3;
+                
                 System.out.println("- " + n3);
                 System.out.println("= "  + total);
+            } 
+            else {
+                System.out.println("ERRO!! Digite a opção correta!!!");
             }
             
         }while(op.equalsIgnoreCase("S"));
@@ -73,8 +88,10 @@ public class Funcoes {
         
         System.out.println("Digite o número: ");
         n1 = entrada.nextFloat();
+        
         System.out.println("Digite outro número: ");
         n2 = entrada.nextFloat();
+        
         total = n1 * n2;
         
         System.out.printf("\n %.1f x %.1f = %.1f\n", n1, n2, total);
@@ -89,22 +106,33 @@ public class Funcoes {
             {
                 break;
             }
-            else{
+            else if(op.equalsIgnoreCase("S")){
+               
                 System.out.println("Digite o número: ");
+                
                 n3 = entrada.nextFloat();
+                
                 total -= n3;
+               
                 System.out.println("x " + n3);
                 System.out.println("= "  + total);
+            } 
+            else {
+                System.out.println("ERRO!! Digite a opção correta!!!");
             }
             
         }while(op.equalsIgnoreCase("S"));
     }
 
+    
     public void Divisao(){
+        
         System.out.println("Digite o número: ");
         n1 = entrada.nextFloat();
+       
         System.out.println("Digite outro número: ");
         n2 = entrada.nextFloat();
+        
         total = n1 / n2;
         
         System.out.printf("\n %f / %f = %f\n", n1, n2, total);
@@ -119,23 +147,64 @@ public class Funcoes {
             {
                 break;
             }
-            else{
+            else if(op.equalsIgnoreCase("S")){
+                
                 System.out.println("Digite o número: ");
+                
                 n3 = entrada.nextFloat();
                 total -= n3;
+               
                 System.out.println("/ " + n3);
                 System.out.println("= "  + total);
+            } 
+            else {
+                System.out.println("ERRO!! Digite a opção correta!!!");
             }
             
         }while(op.equalsIgnoreCase("S"));
     }
+    
+    public float getSoma(){
+        
+        System.out.println("Digite outro número: ");
+        
+        n4 = entrada.nextFloat();
+        return cont = n4;
+    }
+
+    public float getSubtracao(){
+        
+        System.out.println("Digite outro número: ");
+       
+        n4 = entrada.nextFloat();
+        return cont = n4;
+    }
+
+    public float getMultiplicacao(){
+        
+        System.out.println("Digite outro número: ");
+
+        n4 = entrada.nextFloat();
+        return cont = n4;
+    }
+
+    public float getDivisao(){
+        
+        System.out.println("Digite outro número: ");
+
+        n4 = entrada.nextFloat();
+        return cont = n4;
+    }
 
     public void operacao(){
-        System.out.println("===================================");
-        System.out.println("Mudar a operação? [S/N]");
-        op = entrada.next();
+        do{
         
-        if(this.op.equalsIgnoreCase("S")){
+            System.out.println("===================================");
+            System.out.println("Mudar a operação? [S/N]");
+            op = entrada.next();
+        
+            
+            if(this.op.equalsIgnoreCase("S")){
             
             System.out.println("===================================");
             System.out.println("\t(1) - Adição");
@@ -148,25 +217,34 @@ public class Funcoes {
             opc = entrada.nextInt();
 
             if(opc == 1){
-                Soma();
-                cont += total;
-                System.out.println("Valor atual: " + cont);
+                
+                getSoma();
+                total += cont;
+                
+                System.out.println("Valor atual: " + total);
             } 
             else if(opc == 2){
-                Substrair();
-                cont -= total;
-                System.out.println("Valor atual: " + cont);
+                
+                getSubtracao();
+                
+                total -= cont;
+                System.out.println("Valor atual: " + total);
             } 
             else if(opc == 3){
-                Multiplicacao();
-                cont *= total;
-                System.out.println("Valor atual: " + cont);
+                
+                getMultiplicacao();
+                
+                total *= cont;
+                System.out.println("Valor atual: " + total);
             }
             else if(opc == 4){
-                Divisao();
-                cont /= total;
-                System.out.println("Valor atual: " + cont);
+                
+                getDivisao();
+                
+                total /= cont;
+                System.out.println("Valor atual: " + total);
             }
         }
+        }while(op.equalsIgnoreCase("S"));
     }
 }
