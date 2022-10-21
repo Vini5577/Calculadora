@@ -13,15 +13,15 @@ public class menu {
 
     public void opcao(){
         do{
-            System.out.println("==============================");
+            System.out.println("===================================");
             System.out.println("\tCalculadora");
-            System.out.println("==============================");
+            System.out.println("===================================");
             System.out.println("\t(1) - Adição");
             System.out.println("\t(2) - Subtração");
             System.out.println("\t(3) - Multiplicação");
             System.out.println("\t(4) - Divisão");
             System.out.println("\t(5) - Sair do programa");
-            System.out.println("==============================");
+            System.out.println("===================================");
             System.out.println("Selecione uma das opções: ");
             op = entrada.nextInt();
             
@@ -40,15 +40,19 @@ public class menu {
     public void interacao(){
         if(op == 1){
             calculadora.Soma();        
+            System.out.println("===================================");
         }
         else if(op == 2){
             calculadora.Substrair();
+            System.out.println("===================================");
         }
         else if(op == 3){
             calculadora.Multiplicacao();
+            System.out.println("===================================");
         }
         else if(op == 4){
             calculadora.Divisao();
+            System.out.println("===================================");
         }
     }
 
