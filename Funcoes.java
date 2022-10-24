@@ -206,15 +206,16 @@ public class Funcoes {
             
             if(this.op.equalsIgnoreCase("S")){
             
-            System.out.println("===================================");
-            System.out.println("\t(1) - Adição");
-            System.out.println("\t(2) - Subtração");
-            System.out.println("\t(3) - Multiplicação");
-            System.out.println("\t(4) - Divisão");
-            System.out.println("\t(5) - manter a operação atual");
-            System.out.println("===================================");
-            System.out.println("selecione agora uma nova operação: ");
-            opc = entrada.nextInt();
+                System.out.println("===================================");
+                System.out.println("\t(1) - Adição");
+                System.out.println("\t(2) - Subtração");
+                System.out.println("\t(3) - Multiplicação");
+                System.out.println("\t(4) - Divisão");
+                System.out.println("\t(5) - manter a operação atual");
+                System.out.println("===================================");
+                
+                System.out.println("selecione agora uma nova operação: ");
+                opc = entrada.nextInt();
 
             if(opc == 1){
                 
