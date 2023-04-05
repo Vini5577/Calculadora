@@ -1,8 +1,9 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class menu {
     private int op;
-    
+
     Scanner entrada = new Scanner(System.in);
 
     Funcoes calculadora = new Funcoes();
@@ -11,8 +12,9 @@ public class menu {
         System.out.println("Iniciando calculadora...");
     }
 
-    public void opcao(){
+    public void opcao() {
         do{
+
             System.out.println("===================================");
             System.out.println("\tCalculadora");
             System.out.println("===================================");
@@ -23,14 +25,16 @@ public class menu {
             System.out.println("\t(5) - Sair do programa");
             System.out.println("===================================");
             System.out.println("Selecione uma das opções: ");
-            op = entrada.nextInt();
+            try {
+                op = entrada.nextInt();
+            } catch (InputMismatchException erro) {
+                System.out.println("ERRO! SELECIONE AS OPÇÕES APENAS COM NÚMEROS!!");
+                entrada.next();
+            }
             
             interacao();
             if(op == 5){
                 System.out.println("Finalizando o programa...");
-                try{
-                    Thread.sleep(1000);
-                }catch(Exception erro){}
                 break;
             }
 

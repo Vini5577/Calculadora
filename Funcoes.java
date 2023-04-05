@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Funcoes {
@@ -9,12 +10,18 @@ public class Funcoes {
    
     public void Soma(){
         
-        System.out.println("Digite o número: ");
-        n1 = entrada.nextFloat();
-        
-        System.out.println("Digite outro número: ");
-        n2 = entrada.nextFloat();
-       
+        try {
+            System.out.println("Digite o número: ");
+            n1 = entrada.nextFloat();
+            
+            System.out.println("Digite outro número: ");
+            n2 = entrada.nextFloat();
+           
+        } catch (InputMismatchException erro) {
+            System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+            entrada.next();
+        }
+
         total = n1 + n2;
         
         System.out.printf("\n %.1f + %.1f = %.1f\n", n1, n2, total);
@@ -32,7 +39,12 @@ public class Funcoes {
             else if(op.equalsIgnoreCase("S")){
                 
                 System.out.println("Digite o número: ");
-                n3 = entrada.nextFloat();
+                try {
+                    n3 = entrada.nextFloat();
+                } catch (InputMismatchException erro) {
+                    System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+                    entrada.next();
+                }
                 
                 total += n3;
                
@@ -44,19 +56,27 @@ public class Funcoes {
             }
             
         }while(op.equalsIgnoreCase("S"));
+        operacao();
+        
     }
 
     public void Substrair(){
         
-        System.out.println("Digite o número: ");
-        n1 = entrada.nextFloat();
-       
-        System.out.println("Digite outro número: ");
-        n2 = entrada.nextFloat();
+        try {
+            System.out.println("Digite o número: ");
+            n1 = entrada.nextFloat();
+            
+            System.out.println("Digite outro número: ");
+            n2 = entrada.nextFloat();
+           
+        } catch (InputMismatchException erro) {
+            System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+            entrada.next();
+        }
         
         total = n1 - n2;
-        System.out.printf("\n %.1f - %.1f = %.1f\n", n1, n2, total);
         operacao();
+        System.out.printf("\n %.1f - %.1f = %.1f\n", n1, n2, total);
     
         do{ 
             System.out.println("Quer digitar mais números? [S/N]");
@@ -70,7 +90,12 @@ public class Funcoes {
                 
                 System.out.println("Digite o número: ");
                
-                n3 = entrada.nextFloat();
+                try {
+                    n3 = entrada.nextFloat();
+                } catch (InputMismatchException erro) {
+                    System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+                    entrada.next();
+                }
                 
                 total -= n3;
                 
@@ -82,15 +107,22 @@ public class Funcoes {
             }
             
         }while(op.equalsIgnoreCase("S"));
+        operacao();
     }
 
     public void Multiplicacao(){
         
-        System.out.println("Digite o número: ");
-        n1 = entrada.nextFloat();
-        
-        System.out.println("Digite outro número: ");
-        n2 = entrada.nextFloat();
+        try {
+            System.out.println("Digite o número: ");
+            n1 = entrada.nextFloat();
+            
+            System.out.println("Digite outro número: ");
+            n2 = entrada.nextFloat();
+           
+        } catch (InputMismatchException erro) {
+            System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+            entrada.next();
+        }
         
         total = n1 * n2;
         
@@ -110,7 +142,12 @@ public class Funcoes {
                
                 System.out.println("Digite o número: ");
                 
-                n3 = entrada.nextFloat();
+                try {
+                    n3 = entrada.nextFloat();
+                } catch (InputMismatchException erro) {
+                    System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+                    entrada.next();
+                }
                 
                 total -= n3;
                
@@ -122,16 +159,23 @@ public class Funcoes {
             }
             
         }while(op.equalsIgnoreCase("S"));
+        operacao();
     }
 
     
     public void Divisao(){
         
-        System.out.println("Digite o número: ");
-        n1 = entrada.nextFloat();
-       
-        System.out.println("Digite outro número: ");
-        n2 = entrada.nextFloat();
+        try {
+            System.out.println("Digite o número: ");
+            n1 = entrada.nextFloat();
+            
+            System.out.println("Digite outro número: ");
+            n2 = entrada.nextFloat();
+           
+        } catch (InputMismatchException erro) {
+            System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+            entrada.next();
+        }
         
         total = n1 / n2;
         
@@ -151,7 +195,14 @@ public class Funcoes {
                 
                 System.out.println("Digite o número: ");
                 
-                n3 = entrada.nextFloat();
+                try {
+                    n3 = entrada.nextFloat();
+                } catch (InputMismatchException erro) {
+                    System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+                    entrada.next();
+                }
+
+
                 total -= n3;
                
                 System.out.println("/ " + n3);
@@ -162,13 +213,20 @@ public class Funcoes {
             }
             
         }while(op.equalsIgnoreCase("S"));
+        operacao();
+
     }
     
     public float getSoma(){
         
         System.out.println("Digite outro número: ");
         
-        n4 = entrada.nextFloat();
+        try {
+            n4 = entrada.nextFloat();
+        } catch (InputMismatchException erro) {
+            System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+            entrada.next();
+        }
         return cont = n4;
     }
 
@@ -176,7 +234,12 @@ public class Funcoes {
         
         System.out.println("Digite outro número: ");
        
-        n4 = entrada.nextFloat();
+        try {
+            n4 = entrada.nextFloat();
+        } catch (InputMismatchException erro) {
+            System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+            entrada.next();
+        }
         return cont = n4;
     }
 
@@ -184,7 +247,12 @@ public class Funcoes {
         
         System.out.println("Digite outro número: ");
 
-        n4 = entrada.nextFloat();
+        try {
+            n4 = entrada.nextFloat();
+        } catch (InputMismatchException erro) {
+            System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+            entrada.next();
+        }
         return cont = n4;
     }
 
@@ -192,7 +260,12 @@ public class Funcoes {
         
         System.out.println("Digite outro número: ");
 
-        n4 = entrada.nextFloat();
+        try {
+            n4 = entrada.nextFloat();
+        } catch (InputMismatchException erro) {
+            System.out.println("ERRO! DIGITE APENAS NÚMEROS");
+            entrada.next();
+        }
         return cont = n4;
     }
 
